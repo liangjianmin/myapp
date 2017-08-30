@@ -1,0 +1,15 @@
+<section class="content">
+    <ul class="clr">
+        <li *ngFor="let item of listdata">
+            <a href="javascript:;">
+                <img src="{{item.imgUrl}}" alt="">
+                <div class="textwrap clr">
+                    <p class="text fl">{{item.name}}</p>
+                    <div class="fr">
+                        <app-stars [rating]="item.rating"></app-stars>
+                    </div>
+                </div>
+            </a>
+        </li>
+    </ul>
+</section>

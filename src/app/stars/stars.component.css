@@ -1,0 +1,18 @@
+.starswrap {
+    position: relative;
+    padding-right: 7px;
+    padding-bottom: 10px;
+}
+
+.stars {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url("../../assets/images/circle2.png") no-repeat;
+    background-size: cover;
+}
+.stars-curr{
+    background: url("../../assets/images/circle1.png") no-repeat;
+    background-size: cover;
+}
