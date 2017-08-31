@@ -1,3 +1,5 @@
+var cookall=require('../action/cookall');
+
 module.exports = function (app) {
   /**
    * 重定向首页
@@ -5,7 +7,7 @@ module.exports = function (app) {
   app.get('/', function (req, res, next) {
     res.render('index');
   });
-
+  cookall(app)
   app.get('/api/stock', function (req, res) {
     var result = stocks;
     var params = req.query;

@@ -1,8 +1,8 @@
-import {Injectable} from "@angular/core";
-import {Http} from "@angular/http";
-import {Observable} from "rxjs";
+import { Injectable } from '@angular/core';
+import {Http} from '@angular/http';
+import {Observable} from 'rxjs';
 
-@Injectable()
+ @Injectable()
 export class ContentService {
 
   constructor(public http: Http) {
@@ -15,6 +15,7 @@ export class ContentService {
   getList(id: number): Observable<Content> {
     return this.http.get('/api/stock/' + id).map(res => res.json());
   }
+
 
 }
 

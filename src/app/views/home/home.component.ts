@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
-import "rxjs/Rx";
-import {Observable} from "rxjs";
+import 'rxjs/Rx';
+import {Observable} from 'rxjs';
 import {Content, ContentService} from '../../service/content.service'
 
 
@@ -12,15 +12,15 @@ import {Content, ContentService} from '../../service/content.service'
 })
 export class HomeComponent implements OnInit {
 
-    private content: Observable<Content[]>;
+  private content: Observable<Content[]>;
 
-    constructor(public router: Router, private contentService: ContentService) {
+  constructor(public router: Router, private contentService: ContentService) {
 
-    }
+  }
 
 
-    ngOnInit() {
-        this.content = this.contentService.getLists();
-    }
+  ngOnInit() {
+    this.content = this.contentService.getLists();
+  }
 
 }
