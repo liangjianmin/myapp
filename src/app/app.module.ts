@@ -5,26 +5,32 @@ import {HttpModule} from "@angular/http";
 import {AppRoutingModule} from './app.router';
 
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './views/header/header.component';
-import {ContentComponent} from './views/content/content.component';
+import {HeaderComponent} from './views/common/header/header.component';
 import {StarsComponent} from './components/stars/stars.component';
 import {PersonComponent} from './views/person/person.component';
 import {DetailsComponent} from './views/details/details.component';
-
-
 import {ContentService} from './service/content.service';
+<<<<<<< .merge_file_a11368
 import { CookbookComponent } from './views/cookbook/cookbook.component';
+=======
+import { SlideComponent } from './views/common/slide/slide.component';
+import { HomeComponent } from './views/home/home.component';
+>>>>>>> .merge_file_a09128
 
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        ContentComponent,
         StarsComponent,
         PersonComponent,
         DetailsComponent,
+<<<<<<< .merge_file_a11368
         CookbookComponent
+=======
+        SlideComponent,
+        HomeComponent
+>>>>>>> .merge_file_a09128
     ],
     imports: [
         BrowserModule,

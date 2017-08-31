@@ -14,3 +14,5 @@ ng g directive directive/mobileValitor
 ng  serve
 
 
+
+
