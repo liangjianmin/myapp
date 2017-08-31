@@ -14,31 +14,31 @@ import {DetailsComponent} from './details/details.component';
 
 
 const routeConfig: Routes = [
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
-  {path: 'home', component: ContentComponent},
-  {path: 'details/:id', component: DetailsComponent},
-  {path: 'person', component: PersonComponent}
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
+    {path: 'home', component: ContentComponent},
+    {path: 'details/:id', component: DetailsComponent},
+    {path: 'person', component: PersonComponent}
 ];
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    ContentComponent,
-    StarsComponent,
-    PersonComponent,
-    DetailsComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    ReactiveFormsModule,
-    RouterModule.forRoot(routeConfig)
-  ],
-  providers: [ContentService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        ContentComponent,
+        StarsComponent,
+        PersonComponent,
+        DetailsComponent
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        ReactiveFormsModule,
+        RouterModule.forRoot(routeConfig)
+    ],
+    providers: [ContentService],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

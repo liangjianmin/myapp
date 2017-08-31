@@ -18,7 +18,7 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
         this.menus = [
             new Menu(1, '首页', '/home'),
-            new Menu(2, '个人', '/person')
+            new Menu(2, '登录', '/person')
         ];
     }
 }

@@ -1,3 +1,39 @@
 <div class="person">
-  这是个人页面，正在更新.......
+    <form [formGroup]="formModel">
+        <!--自定义验证-->
+        <div class="form-group">
+            <label>手机号：</label>
+            <div class="control-label" [class.has-error]="formModel.get('mobile').touched && (formModel.hasError('mobile','mobile'))">
+                <input type="text" placeholder="输入手机号" class="form-control" formControlName="mobile" autofocus="autofocus" >
+            </div>
+            <div class="error">
+                <span [hidden]="formModel.get('mobile').untouched || !formModel.hasError('mobile','mobile')">请输入正确的手机号</span>
+            </div>
+        </div>
+        <!--框架验证-->
+        <div class="form-group">
+            <label>用户名：</label>
+            <div class="control-label" [class.has-error]="formModel.get('username').touched && (formModel.hasError('minlength','username') || formModel.hasError('required','name'))">
+                <input type="text" placeholder="输入用户名" class="form-control" formControlName="username">
+            </div>
+            <div class="error">
+                <span [hidden]="formModel.get('username').untouched || !formModel.hasError('required','username')">用户名是必填项</span>
+                <span [hidden]="formModel.get('username').untouched || !formModel.hasError('minlength','username')">用户名最小长度是6</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>密码：</label>
+            <div class="control-label" [class.has-error]="formModel.get('password').touched && (formModel.hasError('minlength','password') || formModel.hasError('required','password'))">
+                <input type="text" placeholder="输入密码" class="form-control" formControlName="password">
+            </div>
+            <div class="error">
+                <span [hidden]="formModel.get('username').untouched || !formModel.hasError('required','password')">密码是必填项</span>
+                <span [hidden]="formModel.get('password').untouched || !formModel.hasError('minlength','password')">密码最小长度是6</span>
+            </div>
+        </div>
+        <div class="form-submit">
+            <input type="submit" value="提交" class="form-control-button" (click)="save()">
+            <input type="submit" value="重置" class="form-control-button cancel" (click)="cancel()">
+        </div>
+    </form>
 </div>
