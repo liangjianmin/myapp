@@ -10,6 +10,7 @@ import {StarsComponent} from './components/stars/stars.component';
 import {PersonComponent} from './views/person/person.component';
 import {DetailsComponent} from './views/details/details.component';
 import {ContentService} from './service/content.service';
+import { CookbookComponent } from './views/cookbook/cookbook.component';
 import { SlideComponent } from './views/common/slide/slide.component';
 import { HomeComponent } from './views/home/home.component';
 import { FootsComponent } from './views/foots/foots.component';
@@ -22,6 +23,7 @@ import { FootsComponent } from './views/foots/foots.component';
         StarsComponent,
         PersonComponent,
         DetailsComponent,
+        CookbookComponent,
         SlideComponent,
         HomeComponent,
         FootsComponent
