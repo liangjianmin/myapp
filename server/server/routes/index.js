@@ -40,12 +40,10 @@ var Stock = (function () {
 }());
 
 var stocks = [
-  new Stock(1, "第一", 'assets/images/1.jpg', 3.5),
-  new Stock(2, "第二", 'assets/images/2.jpg', 1.2),
-  new Stock(3, "第三", 'assets/images/3.jpg', 2.2),
-  new Stock(4, "第四", 'assets/images/4.jpg', 5),
-  new Stock(5, "第五", 'assets/images/1.jpg', 4.3),
-  new Stock(6, "第六", 'assets/images/2.jpg', 3.1)
+  new Stock(1, "第一条新闻", 'assets/images/1.jpg', 3.5),
+  new Stock(2, "第二条新闻", 'assets/images/2.jpg', 1.2),
+  new Stock(3, "第三条新闻", 'assets/images/3.jpg', 2.2),
+  new Stock(4, "第四条新闻", 'assets/images/4.jpg', 5)
 ];
 
 

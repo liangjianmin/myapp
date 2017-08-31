@@ -1,41 +1,54 @@
+.contentbox{
+    width: 100%;
+    background-color: #f7f7f7;
+}
 .content {
     width: 1024px;
-    margin: 30px auto 0;
+    margin: 0 auto 0;
+    padding-top: 20px;
 }
 
-.content ul {
+.content .newslist {
     width: 100%;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    box-orient: horizontal;
 }
 
-.content ul li {
+.content .newslist li {
     position: relative;
-    float: left;
-    width: 32%;
+    -webkit-box-flex: 1;
+    flex: 1;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
     margin-right: 1%;
     margin-bottom: 1%;
 }
 
-.content ul li a {
+.content .newslist li a {
     display: block;
 }
-
-.content ul li:nth-of-type(3n) {
+.content .newslist li:hover{
+    -webkit-box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+    -webkit-transition: all ease-in-out 0.2s;
+    -o-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+}
+.content .newslist li img {
+    width: 100%;
+}
+.content .newslist li:last-child{
     margin-right: 0;
 }
-
-.content ul li img {
-    width: 100%;
-}
-
-.content ul li .textwrap {
+.content .newslist li .textwrap {
     position: absolute;
     left: 0;
-    bottom: 0px;
+    top: 79px;
     width: 100%;
+    text-align: center;
 }
-.content ul li .text{
-    padding-left: 12px;
+.content .newslist li .text{
     color: #fff;
     font-size: 14px;
 }
-

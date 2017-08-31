@@ -13,6 +13,7 @@ import {ContentService} from './service/content.service';
 import { CookbookComponent } from './views/cookbook/cookbook.component';
 import { SlideComponent } from './views/common/slide/slide.component';
 import { HomeComponent } from './views/home/home.component';
+import { FootsComponent } from './views/foots/foots.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { HomeComponent } from './views/home/home.component';
         DetailsComponent,
         CookbookComponent,
         SlideComponent,
-        HomeComponent
+        HomeComponent,
+        FootsComponent
     ],
     imports: [
         BrowserModule,
