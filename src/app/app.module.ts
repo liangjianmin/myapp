@@ -13,6 +13,7 @@ import {DetailsComponent} from './views/details/details.component';
 
 
 import {ContentService} from './service/content.service';
+import { CookbookComponent } from './views/cookbook/cookbook.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import {ContentService} from './service/content.service';
         ContentComponent,
         StarsComponent,
         PersonComponent,
-        DetailsComponent
+        DetailsComponent,
+        CookbookComponent
     ],
     imports: [
         BrowserModule,
