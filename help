@@ -1,0 +1,16 @@
+项目的创建
+cnpm install -g @angular/cli
+ng -v
+ng new project
+cnpm install @types/jquery --save-dev
+ng g component navbar
+ng new router --routing
+ng g service shared/product
+ng g pipe pipe/multiple
+ng g directive directive/mobileValitor
+
+
+项目启动
+ng  serve
+
+
