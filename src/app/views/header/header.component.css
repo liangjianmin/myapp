@@ -24,11 +24,14 @@
     box-sizing: border-box;
     text-align: center;
     display: block;
-    font-size: 14px;
     line-height: 50px;
-    color:#fff;
     cursor: pointer;
 }
-.head ul li.active{
+.head ul li a{
+    display: block;
+    font-size: 14px;
+    color:#fff;
+}
+.head ul li a.active{
     color: #FF8862;
 }

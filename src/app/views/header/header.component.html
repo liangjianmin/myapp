@@ -1,0 +1,9 @@
+<div class="head">
+    <ul>
+        <li *ngFor="let menu of menus" [class.active]="currentMenuId == menu.id" >
+            <a  routerLink="{{menu.link}}" routerLinkActive="active">
+                {{menu.name}}
+            </a>
+        </li>
+    </ul>
+</div>

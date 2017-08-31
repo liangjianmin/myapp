@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import "rxjs/Rx";
 import {Observable} from "rxjs";
-import {Content, ContentService} from './content.service'
+import {Content, ContentService} from '../../service/content.service'
 
 
 @Component({
