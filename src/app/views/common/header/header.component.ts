@@ -10,8 +10,6 @@ export class HeaderComponent implements OnInit {
 
     menus: Array<Menu>;
 
-    currentMenuId: number;
-
     constructor(public router: Router) {
     }
 
