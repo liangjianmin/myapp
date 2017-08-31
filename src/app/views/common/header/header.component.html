@@ -1,0 +1,22 @@
+<div class="head">
+    <div class="head-wrap clr">
+        <div class="navbar-menu fl">
+            <div class="logowrap">
+                <a class="logo" routerLink="">
+                    <img src="assets/images/logo.png" alt="" width="35" height="35" title="学做菜">
+                </a>
+            </div>
+            <ul>
+                <li *ngFor="let menu of menus" [class.active]="currentMenuId == menu.id">
+                    <a routerLink="{{menu.link}}" routerLinkActive="active">
+                        {{menu.name}}
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="navbar fr">
+            <a routerLink="/login" class="btn btn-success">登录</a>
+            <a routerLink="/register" class="btn btn-secondary">注册</a>
+        </div>
+    </div>
+</div>

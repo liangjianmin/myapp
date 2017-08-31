@@ -1,0 +1,16 @@
+<app-header></app-header>
+<section class="content">
+  <ul class="clr">
+    <li *ngFor="let item of content | async;let i = index;">
+      <a [routerLink]="['/details', item.id]">
+        <img src="{{item.imgUrl}}" alt="">
+        <div class="textwrap clr">
+          <p class="text fl">{{item.name}}</p>
+          <div class="fr">
+            <app-stars [rating]="item.rating"></app-stars>
+          </div>
+        </div>
+      </a>
+    </li>
+  </ul>
+</section>
