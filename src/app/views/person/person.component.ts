@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import {mobileValidator} from "../../validator/validators";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import {mobileValidator} from '../../validator/validators';
 
 
 @Component({
