@@ -1,26 +1,31 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {Router} from '@angular/router';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs';
-import {Content, ContentService} from '../../service/content.service'
+import {Content, ContentService} from '../../service/content.service';
+import {AppService} from '../../app.service';
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
-  private content: Observable<Content[]>;
+    public title: string = '首页';
 
-  constructor(public router: Router, private contentService: ContentService) {
+    private content: Observable<Content[]>;
 
-  }
+    constructor(public router: Router, private appService: AppService, private contentService: ContentService) {
+
+        this.appService.titleEventEmitter.emit('首页');
+
+    }
 
 
-  ngOnInit() {
-    this.content = this.contentService.getLists();
-  }
+    ngOnInit() {
+        this.content = this.contentService.getLists();
+    }
 
 }

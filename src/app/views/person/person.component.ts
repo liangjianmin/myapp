@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {mobileValidator} from '../../validator/validators';
+import {AppService} from '../../app.service';
 
 
 @Component({
@@ -14,7 +15,10 @@ export class PersonComponent implements OnInit {
 
     public fb = new FormBuilder();
 
-    constructor() {
+    constructor(private appService: AppService) {
+
+        this.appService.titleEventEmitter.emit('个人页面');
+
     }
 
     ngOnInit() {

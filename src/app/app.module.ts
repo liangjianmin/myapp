@@ -14,6 +14,7 @@ import {CookbookComponent} from './views/cookbook/cookbook.component';
 import {SlideComponent} from './views/common/slide/slide.component';
 import {HomeComponent} from './views/home/home.component';
 import {FootsComponent} from './views/foots/foots.component';
+import {AppService} from './app.service';
 
 
 @NgModule({
@@ -35,8 +36,27 @@ import {FootsComponent} from './views/foots/foots.component';
         ReactiveFormsModule,
         AppRoutingModule
     ],
-    providers: [ContentService],
+    providers: [AppService, ContentService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
+
+    /**
+     * 设置页面的title
+     * @type {string}
+     */
+
+    public title: string = '首页';
+
+    constructor(private appService: AppService) {
+
+        this.appService.titleEventEmitter.subscribe((value: string) => {
+            if (value) {
+                this.title = value;
+                document.title = value;
+            } else {
+                document.title = this.title;
+            }
+        });
+    }
 }
