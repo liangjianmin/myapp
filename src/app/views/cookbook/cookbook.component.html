@@ -1,6 +1,10 @@
 <app-header></app-header>
-<section class="box">
+<section class="box" style="margin-top: 60px;">
   <ul class="c-ul">
-    <li class="item"></li>
+    <li *ngFor="let item of test1 " >
+        <div class="textwrap">
+          <img src="{{item}}" class="img-item" data-w="" />
+        </div>
+    </li>
   </ul>
 </section>
