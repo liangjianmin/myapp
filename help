@@ -3,15 +3,38 @@ cnpm install -g @angular/cli
 ng -v
 ng new project
 cnpm install @types/jquery --save-dev
-ng g component navbar
+ng g component home
 ng new router --routing
-ng g service shared/product
-ng g pipe pipe/multiple
+ng g service app
+ng g pipe pie/formdata
 ng g directive directive/mobileValitor
 
 
 项目启动
-ng  serve
+npm  run start
+cd server: node app
+
+2017-9-1：
+**********增加了/app.service.ts服务，目的利用service的特性控制每个路由的title，每个页面在constructor方法中调用例如首页：this.appService.titleEventEmitter.emit('首页');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

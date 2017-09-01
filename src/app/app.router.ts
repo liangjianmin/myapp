@@ -1,10 +1,9 @@
-import {NgModule} from "@angular/core";
-import {Routes, RouterModule} from "@angular/router";
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 import {DetailsComponent} from './views/details/details.component';
 import {PersonComponent} from './views/person/person.component';
-import { HomeComponent } from './views/home/home.component';
-import { CookbookComponent } from './views/cookbook/cookbook.component';
-
+import {HomeComponent} from './views/home/home.component';
+import {CookbookComponent} from './views/cookbook/cookbook.component';
 
 
 const routes: Routes = [

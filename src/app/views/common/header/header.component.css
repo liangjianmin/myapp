@@ -1,33 +1,43 @@
-.head{
-    position: fixed;
-    top:0;
+.head {
     width: 100%;
     height: 50px;
     background: #000;
+
 }
-.head .head-wrap{
+
+.fix {
+    position: fixed;
+    top: 0;
+    z-index: 9999;
+}
+
+.head .head-wrap {
     position: relative;
     width: 1024px;
     height: 100%;
     margin: 0 auto;
 }
-.head .logowrap{
+
+.head .logowrap {
     position: absolute;
-    top:50%;
-    left:0;
+    top: 50%;
+    left: 0;
     margin-top: -17px;
 }
-.head .logowrap a{
+
+.head .logowrap a {
     display: block;
 }
-.head .head-wrap ul{
+
+.head .head-wrap ul {
     margin-left: 54px;
     height: 100%;
     display: flex;
     -webkit-box-orient: horizontal;
     box-orient: horizontal;
 }
-.head .head-wrap ul li{
+
+.head .head-wrap ul li {
     width: 90px;
     -webkit-box-flex: 1;
     flex: 1;
@@ -39,21 +49,26 @@
     cursor: pointer;
     transition: all 0.2s ease;
 }
-.head .head-wrap ul li:hover a{
+
+.head .head-wrap ul li:hover a {
     color: #fff;
 }
-.head .head-wrap ul li a{
+
+.head .head-wrap ul li a {
     display: block;
     font-size: 14px;
-    color:#bfbfbf;
+    color: #bfbfbf;
 }
-.head .head-wrap ul li a.active{
+
+.head .head-wrap ul li a.active {
     color: #fff;
 }
-.head .navbar{
+
+.head .navbar {
     margin-top: 10px;
 }
-.head .navbar .btn{
+
+.head .navbar .btn {
     display: inline-block;
     text-align: center;
     vertical-align: middle;
@@ -65,21 +80,25 @@
     line-height: 1.42857;
     border-radius: 3px;
 }
-.head .navbar .btn-success{
+
+.head .navbar .btn-success {
     color: #fff;
     background-color: #22b98f;
     border-color: transparent;
 }
-.head .navbar .btn-secondary{
+
+.head .navbar .btn-secondary {
     color: #fff;
     background-color: #484458;
     border-color: transparent;
 }
+
 .head .navbar .btn-success:hover {
     color: #fff;
     background-color: #289a7a;
     border-color: transparent;
 }
+
 .head .navbar .btn-secondary:hover {
     color: #fff;
     background-color: #403f43;

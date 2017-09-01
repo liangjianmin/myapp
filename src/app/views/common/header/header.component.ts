@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -8,9 +8,15 @@ import {Router} from "@angular/router";
 })
 export class HeaderComponent implements OnInit {
 
-    menus: Array<Menu>;
+    private menus: Array<Menu>;
+
+    private fixflag: boolean = false;
+
+    @Input()
+    private fix: boolean = false;
 
     constructor(public router: Router) {
+
     }
 
     ngOnInit() {
@@ -20,6 +26,11 @@ export class HeaderComponent implements OnInit {
             new Menu(3, '上传食谱', '/person'),
             new Menu(4, '广场', '/person')
         ];
+        if (this.fix) {
+            this.fixflag=true;
+        }else {
+            this.fixflag=false;
+        }
     }
 }
 
