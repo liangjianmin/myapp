@@ -6,12 +6,12 @@ var session = require('express-session');
 var connect = require('connect');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var routes = require('./server/routes/index');
+var routes = require('./routes/index');
 var app = express();
 
 
 // view engine setup
-app.set('views', path.join(__dirname, './server/views'));
+app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'html');
 app.engine('.html', require('ejs').__express);
 
