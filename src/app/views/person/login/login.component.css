@@ -1,0 +1,106 @@
+.user-wrap {
+    width: 300px;
+    margin: 130px auto 0;
+    background: #fff;
+    padding:30px;
+}
+
+.user-header .subtitle {
+    margin: 30px 0 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1;
+    color: #555;
+    text-align: center;
+}
+
+.index-tab-navs {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.index-tab-navs .navs-slider {
+    position: relative;
+    display: inline-block
+}
+
+.index-tab-navs .navs-slider .navs-slider-bar {
+    position: absolute;
+    left: 4em;
+    bottom: 0;
+    margin: 0 .8em;
+    width: 2.4em;
+    height: 2px;
+    background: #0f88eb;
+    -webkit-transition: left .15s ease-in;
+    transition: left .15s ease-in
+}
+
+.index-tab-navs a {
+    float: left;
+    width: 4em;
+    color: #555;
+    line-height: 35px;
+    opacity: .7;
+    -webkit-transition: opacity .15s, color .15s;
+    transition: opacity .15s, color .15s
+}
+
+.index-tab-navs a:hover {
+    opacity: 1;
+    text-decoration: none
+}
+
+.index-tab-navs a.active {
+    opacity: 1;
+    color: #0f88eb
+}
+
+.group-inputs .name {
+    border: none;
+}
+
+.group-inputs {
+    padding: 1px 0;
+    border: 1px solid #d5d5d5;
+    border-radius: 3px;
+}
+
+.input-wrapper {
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    border-top: 1px solid #e8e8e8;
+}
+
+.input-wrapper > input {
+    padding: 1em .8em;
+    width: 100%;
+    box-sizing: border-box;
+    line-height: 19px;
+    color: #555;
+    font-size: 13px;
+}
+
+.button-wrapper {
+    margin-top: 18px;
+    text-align: left;
+}
+
+.sign-button {
+    display: block;
+    width: 100%;
+    background: #0f88eb;
+    border-radius: 3px;
+    line-height: 41px;
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    cursor: pointer;
+}
+
+.sign-button:hover {
+    background: #55abed;
+}

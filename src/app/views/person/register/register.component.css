@@ -1,8 +1,8 @@
 .user-wrap {
     width: 300px;
-    height: 100%;
     margin: 130px auto 0;
     background: #fff;
+    padding: 30px;
 }
 
 .user-header .subtitle {
@@ -57,21 +57,24 @@
     color: #0f88eb
 }
 
-.group-inputs .name{
+.group-inputs .name {
     border: none;
 }
-.group-inputs{
+
+.group-inputs {
     padding: 1px 0;
     border: 1px solid #d5d5d5;
     border-radius: 3px;
 }
-.input-wrapper{
+
+.input-wrapper {
     position: relative;
     overflow: hidden;
     text-align: left;
     border-top: 1px solid #e8e8e8;
 }
-.input-wrapper > input{
+
+.input-wrapper > input {
     padding: 1em .8em;
     width: 100%;
     box-sizing: border-box;
@@ -79,11 +82,13 @@
     color: #555;
     font-size: 13px;
 }
-.button-wrapper{
+
+.button-wrapper {
     margin-top: 18px;
     text-align: left;
 }
-.sign-button{
+
+.sign-button {
     display: block;
     width: 100%;
     background: #0f88eb;
@@ -92,8 +97,10 @@
     color: #fff;
     font-size: 15px;
     text-align: center;
-    text-shadow: 0 1px 1px rgba(0,0,0,.2);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+    cursor: pointer;
 }
-.sign-button:hover{
+
+.sign-button:hover {
     background: #55abed;
 }
