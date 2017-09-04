@@ -15,6 +15,7 @@ import {SlideComponent} from './views/common/slide/slide.component';
 import {HomeComponent} from './views/home/home.component';
 import {FootsComponent} from './views/foots/foots.component';
 import {AppService} from './app.service';
+import { PublicComponent } from './views/common/public/public.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import {AppService} from './app.service';
         CookbookComponent,
         SlideComponent,
         HomeComponent,
-        FootsComponent
+        FootsComponent,
+        PublicComponent
     ],
     imports: [
         BrowserModule,

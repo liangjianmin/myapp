@@ -1,4 +1,5 @@
 .box{width: 1060px;margin: 30px auto;}
-.c-ul{ -webkit-column-count: 3; /* Chrome, Safari, Opera */
-  -moz-column-count: 3; /* Firefox */
-  column-count: 3;}
+.c-ul{ /*-webkit-column-count: 3; !* Chrome, Safari, Opera *!
+  -moz-column-count: 3; !* Firefox *!
+  column-count: 3;*/}
+.c-ul li{float: left}

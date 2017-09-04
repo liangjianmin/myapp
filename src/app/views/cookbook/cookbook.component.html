@@ -1,9 +1,9 @@
 <app-header></app-header>
 <section class="box" style="margin-top: 60px;">
-  <ul class="c-ul">
-    <li *ngFor="let item of test1 " >
+  <ul class="c-ul" id="c-ul">
+    <li *ngFor="let item of imgInfo " >
         <div class="textwrap">
-          <img src="{{item}}" class="img-item" data-w="" />
+          <img src="{{item.url}}" class="img-item"  />
         </div>
     </li>
   </ul>

@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
     ngOnInit() {
         this.menus = [
             new Menu(1, '菜谱大全', '/home'),
-            new Menu(2, '精选食材', '/person'),
+            new Menu(2, '精选食材', '/cook'),
             new Menu(3, '上传食谱', '/person'),
             new Menu(4, '广场', '/person')
         ];
