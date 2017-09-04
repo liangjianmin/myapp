@@ -15,7 +15,8 @@ import {SlideComponent} from './views/common/slide/slide.component';
 import {HomeComponent} from './views/home/home.component';
 import {FootsComponent} from './views/foots/foots.component';
 import {AppService} from './app.service';
-import { PublicComponent } from './views/common/public/public.component';
+import {RegisterComponent} from './views/person/register/register.component';
+import {LoginComponent} from './views/person/login/login.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { PublicComponent } from './views/common/public/public.component';
         SlideComponent,
         HomeComponent,
         FootsComponent,
-        PublicComponent
+        RegisterComponent,
+        LoginComponent
     ],
     imports: [
         BrowserModule,

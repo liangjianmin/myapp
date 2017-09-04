@@ -1,0 +1,27 @@
+<div class="user-wrap boxsiz">
+    <div class="user-header">
+        <h2 class="subtitle">与世界分享你的厨艺，心得</h2>
+    </div>
+    <div class="index-tab-navs">
+        <div class="navs-slider clr">
+            <a [routerLink]="['/register']" routerLinkActive="active">注册</a>
+            <a [routerLink]="['/login']" routerLinkActive="active">登录</a>
+            <span class="navs-slider-bar"></span>
+        </div>
+    </div>
+    <div class="user-wrap-view">
+        <form>
+            <div class="group-inputs">
+                <div class="name input-wrapper">
+                    <input type="text" placeholder="手机或邮箱"/>
+                </div>
+                <div class="input-wrapper">
+                    <input type="password" placeholder="密码"/>
+                </div>
+            </div>
+            <div class="button-wrapper">
+                <button class="sign-button submit" type="submit">登录</button>
+            </div>
+        </form>
+    </div>
+</div>
