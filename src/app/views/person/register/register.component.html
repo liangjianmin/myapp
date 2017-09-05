@@ -10,19 +10,21 @@
         </div>
     </div>
     <div class="user-wrap-view">
-        <form>
+        <form [formGroup]="formModelRegister" (submit)="onSubmit()">
             <div class="group-inputs">
-                <div class="name input-wrapper">
-                    <input type="text" placeholder="姓名"/>
-                    <label class="error">请填写姓名</label>
+                <div class="name input-wrapper" [class.has-error]="formModelRegister.get('username').touched && (formModelRegister.hasError('minlength','username') || formModelRegister.hasError('required','name'))">
+                    <input type="text" placeholder="姓名" formControlName="username" autofocus="autofocus"/>
+                    <label [hidden]="formModelRegister.get('username').untouched || !formModelRegister.hasError('required','username')" class="error">姓名是必填项</label>
+                    <label [hidden]="formModelRegister.get('username').untouched || !formModelRegister.hasError('minlength','username')" class="error">姓名最小长度是2</label>
                 </div>
-                <div class="input-wrapper">
-                    <input type="text" placeholder="手机号"/>
-                    <label class="error">请填写手机号</label>
+                <div class="input-wrapper" [class.has-error]="formModelRegister.get('mobile').touched && (formModelRegister.hasError('mobile','mobile'))">
+                    <input type="text" placeholder="手机号" formControlName="mobile"/>
+                    <label class="error" [hidden]="formModelRegister.get('mobile').untouched || !formModelRegister.hasError('mobile','mobile')">请填写正确手机号</label>
                 </div>
-                <div class="input-wrapper">
-                    <input type="password" placeholder="密码（不少于 6 位）"/>
-                    <label class="error">请填写密码</label>
+                <div class="input-wrapper" [class.has-error]="formModelRegister.get('password').touched && (formModelRegister.hasError('minlength','password') || formModelRegister.hasError('required','password'))">
+                    <input type="password" placeholder="密码（不少于 6 位）" formControlName="password"/>
+                    <label [hidden]="formModelRegister.get('password').untouched || !formModelRegister.hasError('required','password')" class="error">密码是必填项</label>
+                    <label [hidden]="formModelRegister.get('password').untouched || !formModelRegister.hasError('minlength','password')" class="error">密码最小长度是6</label>
                 </div>
             </div>
             <div class="button-wrapper">

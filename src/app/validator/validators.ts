@@ -1,6 +1,5 @@
-import {FormControl, FormGroup} from "@angular/forms";
-import {Observable} from "rxjs";
-
+import {FormControl, FormGroup} from '@angular/forms';
+import {Observable} from 'rxjs';
 
 
 export function mobileValidator(control: FormControl): any {

@@ -34,7 +34,8 @@ export class HomeComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
     ngAfterViewInit() {
 
         setTimeout(() => {
-            var dom = this.elementRef.nativeElement.querySelectorAll('.newslist li');
+            var dom = this.elementRef.nativeElement.querySelectorAll('.newslist li img');
+            //var width=dom[0].style.width='400px'
             console.log(dom[0].offsetWidth);
         }, 0);
 
