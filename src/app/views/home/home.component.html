@@ -3,7 +3,7 @@
 <section class="contentbox">
     <div class="content">
         <ul class="newslist">
-            <li *ngFor="let item of content | async;let i = index;">
+            <li *ngFor="let item of contentNews | async;let i = index;">
                 <a [routerLink]="['/details', item.id]">
                     <img src="{{item.imgUrl}}" alt="">
                     <div class="textwrap">

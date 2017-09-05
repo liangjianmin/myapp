@@ -4,19 +4,22 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 import {AppRoutingModule} from './app.router';
 
+
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './views/common/header/header.component';
 import {StarsComponent} from './components/stars/stars.component';
 import {PersonComponent} from './views/person/person.component';
 import {DetailsComponent} from './views/details/details.component';
-import {ContentService} from './service/content.service';
 import {CookbookComponent} from './views/cookbook/cookbook.component';
 import {SlideComponent} from './views/common/slide/slide.component';
 import {HomeComponent} from './views/home/home.component';
 import {FootsComponent} from './views/foots/foots.component';
-import {AppService} from './app.service';
 import {RegisterComponent} from './views/person/register/register.component';
 import {LoginComponent} from './views/person/login/login.component';
+
+
+import {AppService} from './app.service';
+import {Services} from './api/index.service';
 
 
 @NgModule({
@@ -40,7 +43,7 @@ import {LoginComponent} from './views/person/login/login.component';
         ReactiveFormsModule,
         AppRoutingModule
     ],
-    providers: [AppService, ContentService],
+    providers: [AppService, Services],
     bootstrap: [AppComponent]
 })
 export class AppModule {

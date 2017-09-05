@@ -1,9 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, OnChanges, AfterViewInit, ElementRef, ViewChild, DoCheck, AfterViewChecked} from '@angular/core';
 import {Router} from '@angular/router';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs';
-import {Content, ContentService} from '../../service/content.service';
 import {AppService} from '../../app.service';
+import {Services} from '../../api/index.service';
 
 
 @Component({
@@ -11,21 +11,42 @@ import {AppService} from '../../app.service';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit, DoCheck, AfterViewChecked {
 
     public title: string = '首页';
 
-    private content: Observable<Content[]>;
+    // 首页新闻
+    private contentNews: Observable<any>;
 
-    constructor(public router: Router, private appService: AppService, private contentService: ContentService) {
+
+    constructor(public router: Router, private appService: AppService, private services: Services, private elementRef: ElementRef) {
 
         this.appService.titleEventEmitter.emit('首页');
+        this.contentNews = this.services.getHomeNews();
 
     }
 
 
     ngOnInit() {
-        this.content = this.contentService.getLists();
+
+    }
+
+    ngAfterViewInit() {
+
+        setTimeout(() => {
+            var dom = this.elementRef.nativeElement.querySelectorAll('.newslist li');
+            console.log(dom[0].offsetWidth);
+        }, 0);
+
+    }
+
+
+    ngDoCheck(): void {
+
+    }
+
+    ngAfterViewChecked(): void {
+
     }
 
 }

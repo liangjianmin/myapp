@@ -74,6 +74,17 @@
     border-top: 1px solid #e8e8e8;
 }
 
+.input-wrapper label.error{
+    position: absolute;
+    right: 8px;
+    top: 0;
+    color: #c33;
+    cursor: text;
+    line-height: 48px;
+    font-size: 13px;
+    transition: .25s ease-out;
+}
+
 .input-wrapper > input {
     padding: 1em .8em;
     width: 100%;

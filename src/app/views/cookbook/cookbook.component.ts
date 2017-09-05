@@ -1,7 +1,7 @@
 import {AfterContentInit, Component , OnChanges, OnInit,DoCheck,AfterViewInit,Directive,ElementRef} from '@angular/core';
 import 'rxjs/Rx';
 import {Observable} from 'rxjs';
-import {Content, ContentService} from '../../service/content.service'
+//import {Content, ContentService} from '../../service/content.service'
 /*import {Public} from '../common/public/public.component'*/
 
 @Component({
@@ -15,18 +15,18 @@ import {Content, ContentService} from '../../service/content.service'
 
 export class CookbookComponent implements OnInit,OnChanges,DoCheck,AfterViewInit{
 
-  private content: Observable<Content[]>;
+  //private content: Observable<Content[]>;
   imgInfo:any[];
   imgInfoUse:any[];
 
 
-  constructor(private contentService: ContentService,el: ElementRef) {
+  constructor(el: ElementRef) {
     el.nativeElement.style.width = '300px';
 
   }
 
   ngOnInit() {
-    this.content = this.contentService.getLists();
+   // this.content = this.contentService.getLists();
     this.imgInfo=[
       {
         w:525,

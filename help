@@ -16,7 +16,8 @@ cd server: node app
 
 2017-9-1：
 **********增加了/app.service.ts服务，目的利用service的特性控制每个路由的title，每个页面在constructor方法中调用例如首页：this.appService.titleEventEmitter.emit('首页');
-
+2017-9-5
+**********增加了api管理 /indx.service.ts服务，接口管理;
 
 
 

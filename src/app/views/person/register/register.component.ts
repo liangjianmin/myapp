@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {AppService} from '../../../app.service';
 
 
 @Component({
@@ -9,8 +9,8 @@ import {Router} from '@angular/router';
 })
 export class RegisterComponent implements OnInit {
 
-    constructor(public router: Router) {
-
+    constructor(private appService: AppService) {
+        this.appService.titleEventEmitter.emit('注册页面');
     }
 
     ngOnInit() {
