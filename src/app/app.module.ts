@@ -20,6 +20,8 @@ import {LoginComponent} from './views/person/login/login.component';
 
 import {AppService} from './app.service';
 import {Services} from './api/index.service';
+import { AlertComponent } from './components/alert/alert.component';
+import { AlertService } from './components/alert/alerts.service';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import {Services} from './api/index.service';
         HomeComponent,
         FootsComponent,
         RegisterComponent,
-        LoginComponent
+        LoginComponent,
+        AlertComponent
     ],
     imports: [
         BrowserModule,
@@ -43,7 +46,7 @@ import {Services} from './api/index.service';
         ReactiveFormsModule,
         AppRoutingModule
     ],
-    providers: [AppService, Services],
+    providers: [AppService, Services,AlertService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

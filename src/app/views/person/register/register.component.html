@@ -10,6 +10,7 @@
         </div>
     </div>
     <div class="user-wrap-view">
+        <input type="button" value="ShowMessage" (click)="msg()" />
         <form [formGroup]="formModelRegister" (submit)="onSubmit()">
             <div class="group-inputs">
                 <div class="name input-wrapper" [class.has-error]="formModelRegister.get('username').touched && (formModelRegister.hasError('minlength','username') || formModelRegister.hasError('required','name'))">
@@ -33,3 +34,4 @@
         </form>
     </div>
 </div>
+<app-alert></app-alert>

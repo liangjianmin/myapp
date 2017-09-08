@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AppService} from '../../../app.service';
 import {mobileValidator} from '../../../validator/validators';
+import {AlertService} from '../../../components/alert/alerts.service';
 
 @Component({
     selector: 'app-register',
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
     public fb = new FormBuilder();
 
-    constructor(private appService: AppService) {
+    constructor(private appService: AppService, private alert: AlertService) {
         this.appService.titleEventEmitter.emit('注册页面');
     }
 
@@ -32,6 +33,12 @@ export class RegisterComponent implements OnInit {
         if (this.formModelRegister.valid) {
             console.log(this.formModelRegister.value);
         }
+    }
+
+    msg() {
+        this.alert.message('这是一个demo', 'success',function (a) {
+            alert('212')
+        });
     }
 
 }
