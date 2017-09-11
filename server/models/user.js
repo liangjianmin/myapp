@@ -22,6 +22,15 @@ module.exports = {
         mysqlDB.getTableAllInfo({sql: sql}, callback);
     },
     /**
+     * 查询用户手机是否注册
+     * @param phone
+     * @param callback
+     */
+    getUserExist: function (phone, callback) {
+        sql = "select * from users WHERE phone='" + phone + "' ";
+        mysqlDB.getTableAllInfo({sql: sql}, callback);
+    },
+    /**
      * 查询用户注册数量
      * @param callback
      */

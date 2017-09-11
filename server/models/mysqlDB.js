@@ -4,7 +4,7 @@ var connection = mysql.createConnection({
     host: 'ljmvae123.mysql.rds.aliyuncs.com',
     user: 'root',
     password: 'LJMljm@1234',
-    database: 'foot_menu',
+    database: 'foot_meun',
     port: '3306'
 });
 
