@@ -36,7 +36,4 @@ export class AlertsConfig {
         return AlertsSettingsData;
     }
 
-    callbackfun(callback) {
-       
-    }
 }

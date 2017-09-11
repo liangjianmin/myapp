@@ -36,8 +36,8 @@ export class RegisterComponent implements OnInit {
     }
 
     msg() {
-        this.alert.message('这是一个demo', 'success',function (a) {
-            alert('212')
+        this.alert.message('这是一个demo', 'success', 3, function () {
+            alert('这是回调函数');
         });
     }
 

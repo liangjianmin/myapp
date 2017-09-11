@@ -13,11 +13,11 @@ export class AlertComponent implements OnInit {
     public alertclass;
     public styles;
     public settings;
-    public callbacks;
-
+    public classname: string;
 
 
     constructor(private alerts: AlertService) {
+        this.classname = '';
         this.alertclass = new AlertsConfig();
         this.settings = this.alertclass.setSettings();
 
@@ -25,17 +25,18 @@ export class AlertComponent implements OnInit {
 
     ngOnInit() {
         this.alerts.alertsObs.subscribe((object) => {
+            this.classname = '';
             object['styles'] = this.alertclass.getstyles(object['type']);
             this.messages.push(object);
-            console.log(object)
-            if (this.settings.timeout > 0) {
+            if (object['timeout'] > 0) {
                 setTimeout(() => {
-                    object['callback']=this.alertclass.callbackfun();
-                    this.removeMessage(object);
-                    console.log(object)
-                }, this.settings.timeout * 1000);
+                    this.classname = 'fadeOut';
+                    setTimeout(() => {
+                        this.removeMessage(object);
+                        object['callback'] = this.callback(object['callback']);
+                    }, 500);
+                }, object['timeout'] * 1000);
             }
-
 
         });
 
@@ -43,6 +44,10 @@ export class AlertComponent implements OnInit {
 
     removeMessage(message: Object) {
         this.messages.splice(this.messages.indexOf(message), 1);
+    }
+
+    callback(fn: any) {
+        return fn();
     }
 
 }

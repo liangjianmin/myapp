@@ -54,23 +54,31 @@
     color: #8391a5;
     text-align: justify;
 }
-.el-message-group .close{
+
+.el-message-group .close {
     position: absolute;
     right: 0;
-    top:50%;
+    top: 50%;
     transform: translateY(-50%);
     width: 16px;
     height: 16px;
     background: url("../../../assets/images/close.png") no-repeat;
     background-size: cover;
     display: block;
-    opacity:0.85;
+    opacity: 0.85;
 }
-.el-message-group .close:hover{
-    opacity:1;
+
+.el-message-group .close:hover {
+    opacity: 1;
 }
+
 .fadeIn {
     animation: fadeInDown 0.5s normal;
+}
+
+.fadeOut {
+    animation: fadeOutUp 0.5s normal;
+    animation-fill-mode: forwards;
 }
 
 @-webkit-keyframes fadeInDown {
@@ -81,5 +89,16 @@
     100% {
         opacity: 1;
         transform: translate(-50%, 0)
+    }
+}
+
+@-webkit-keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, 0)
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -20px)
     }
 }

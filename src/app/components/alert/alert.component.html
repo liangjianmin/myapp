@@ -1,7 +1,7 @@
-<div class="el-message fadeIn" *ngFor="let message of messages">
+<div class="el-message fadeIn" [ngClass]="classname" *ngFor="let message of messages">
     <i class="el-message-img" [ngClass]="message.styles.icon"></i>
     <div class="el-message-group">
-        <p> {{message.message}}</p>
+        <p>{{message.message}}</p>
         <a href="javascript:;" class="close" (click)="removeMessage(message)"></a>
     </div>
 </div>

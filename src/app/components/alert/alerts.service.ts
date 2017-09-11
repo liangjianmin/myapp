@@ -1,24 +1,21 @@
 import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 
-export interface AlertsInterface {
-    alertsSubject: Subject<Object>;
+export interface AlertInterface {
+    alertSubject: Subject<Object>;
 
-    message(message: string, type: string, callback: any);
+    message(message: string, type: string, timeout: number, callback: any);
 }
 
 @Injectable()
-export class AlertService implements AlertsInterface {
+export class AlertService implements AlertInterface {
 
-    alertsSubject = new Subject<Object>();
+    alertSubject = new Subject<Object>();
 
-    alertsObs = this.alertsSubject.asObservable();
+    alertsObs = this.alertSubject.asObservable();
 
-    message(message: string, type: string, callback: any) {
-        this.alertsSubject.next({message: message, type: type, callback: function () {
-            
-        }, styles: {}});
+    message(message: string, type: string, timeout: number, callback: any) {
+        this.alertSubject.next({message: message, type: type, timeout: timeout, callback: callback, styles: {}});
     }
-
 
 }
