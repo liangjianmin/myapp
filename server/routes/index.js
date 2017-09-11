@@ -1,5 +1,6 @@
 var cookall = require('../action/cookall');
 var home = require('../action/home');
+var user = require('../action/user');
 
 module.exports = function (app) {
 
@@ -12,4 +13,5 @@ module.exports = function (app) {
 
     cookall(app);
     home(app);
+    user(app);
 }

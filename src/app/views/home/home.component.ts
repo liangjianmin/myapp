@@ -22,8 +22,7 @@ export class HomeComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
     constructor(public router: Router, private appService: AppService, private services: Services, private elementRef: ElementRef) {
 
         this.appService.titleEventEmitter.emit('首页');
-        this.contentNews = this.services.getHomeNews();
-
+        this.contentNews = this.services.getHomeNews({page:1});
     }
 
 

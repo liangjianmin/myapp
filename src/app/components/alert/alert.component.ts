@@ -47,7 +47,9 @@ export class AlertComponent implements OnInit {
     }
 
     callback(fn: any) {
-        return fn();
+        if (fn) {
+            return fn();
+        }
     }
 
 }

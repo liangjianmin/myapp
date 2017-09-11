@@ -10,11 +10,20 @@ export class apis {
 
     /**
      *  获取首页新闻
-     * @returns {string}
      */
-    static getHomeNews() {
-        return apis.baseUrl + 'news';
-    }
+    static getHomeNews = apis.baseUrl + 'news';
+
+
+    /**
+     *  注册
+     */
+    static register = apis.baseUrl + 'register';
+
+
+    /**
+     *  登录
+     */
+    static login = apis.baseUrl + 'login';
 
 
 }
@@ -27,9 +36,16 @@ export class Services {
 
     }
 
+    getHomeNews(params): Observable<any> {
+        return this.http.get(apis.getHomeNews, {params: params}).map(res => res.json());
+    }
 
-    getHomeNews(): Observable<any> {
-        return this.http.get(apis.getHomeNews()).map(res => res.json());
+    register(params): Observable<any> {
+        return this.http.post(apis.register, params).map(res => res.json());
+    }
+
+    login(params): Observable<any> {
+        return this.http.post(apis.login, params).map(res => res.json());
     }
 
 

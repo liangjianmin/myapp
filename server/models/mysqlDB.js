@@ -4,8 +4,8 @@ var connection = mysql.createConnection({
     host: 'ljmvae123.mysql.rds.aliyuncs.com',
     user: 'root',
     password: 'LJMljm@1234',
-    database: 'auction',
-    port:'3306'
+    database: 'foot_menu',
+    port: '3306'
 });
 
 function openConnection() {
@@ -67,7 +67,7 @@ module.exports = {
                     data.status = true;
                     callback && callback(data);
                 } else {
-                  console.log(options.sql)
+                    console.log(options.sql)
                     console.log('Error while performing Query.');
                 }
             });
