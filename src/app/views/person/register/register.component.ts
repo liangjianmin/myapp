@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
 import 'rxjs/Rx';
 import {AppService} from '../../../app.service';
 import {mobileValidator} from '../../../validator/validators';
@@ -18,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
     private fb = new FormBuilder();
 
-    constructor(private appService: AppService, private alert: AlertService, private services: Services) {
+    constructor(public router: Router, private appService: AppService, private alert: AlertService, private services: Services) {
         this.appService.titleEventEmitter.emit('注册页面');
     }
 
@@ -35,9 +36,15 @@ export class RegisterComponent implements OnInit {
     onSubmit() {
         var self = this;
         if (this.formModelRegister.valid) {
-            console.log(this.formModelRegister.value);
+            //console.log(this.formModelRegister.value);
             this.services.register(self.formModelRegister.value).subscribe((res) => {
-                this.alert.message('恭喜您：' + res.username + ' 注册成功', 'success');
+                if (res.status === 0) {
+                    this.alert.message('恭喜注册成功', 'success', 2, () => {
+                        this.router.navigateByUrl('/login');
+                    });
+                } else {
+                    this.alert.message(res.message, 'error');
+                }
             }, error => {
                 console.log(error);
             });

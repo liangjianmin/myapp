@@ -38,15 +38,15 @@ module.exports = function (app) {
                         },
                         sql: "INSERT INTO users SET ?"
                     }, function (data) {
-                        res.send(data);
+                        res.send({message: '注册成功', data: {id: data.id}, status: 0});
                     });
                 } else {
-                    res.send('手机已经注册');
+                    res.send({message: '该手机号已经注册', data: {}, status: 1});
                 }
             })
 
         } else {
-            res.send('啊哦，出错了');
+            res.send({message: '字段', data: {}, status: 1});
         }
 
     });

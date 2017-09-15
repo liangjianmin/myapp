@@ -148,6 +148,6 @@ app-register, app-login {
     height: 100%;
     display: block;
     overflow: hidden;
-    background: url("/assets/images/bg.jpg") no-repeat center center;
+    background: url("/assets/images/500475248_banner.jpg") no-repeat center center;
     background-size: cover;
 }
