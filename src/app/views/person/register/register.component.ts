@@ -6,7 +6,7 @@ import {AppService} from '../../../app.service';
 import {mobileValidator} from '../../../validator/validators';
 import {AlertService} from '../../../components/alert/alerts.service';
 import {Services} from '../../../api/index.service';
-
+import {whele} from '../../../util/whale';
 
 @Component({
     selector: 'app-register',
@@ -31,6 +31,8 @@ export class RegisterComponent implements OnInit {
             password: ['', [Validators.required, Validators.minLength(6)]]
         });
 
+
+        whele();
     }
 
     onSubmit() {

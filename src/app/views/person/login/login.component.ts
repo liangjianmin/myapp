@@ -1,18 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import 'rxjs/Rx';
 import {AppService} from '../../../app.service';
 
+
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private appService: AppService) {
-      this.appService.titleEventEmitter.emit('登录页面');
-  }
+    constructor(public router: Router, private appService: AppService) {
+        this.appService.titleEventEmitter.emit('登录页面');
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+
+    }
 
 }

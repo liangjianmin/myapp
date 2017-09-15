@@ -1,8 +1,10 @@
 .user-wrap {
+    position: relative;
     width: 300px;
     margin: 130px auto 0;
     background: #fff;
     padding: 30px;
+    z-index: 11;
 }
 
 .user-header .subtitle {
@@ -74,7 +76,7 @@
     border-top: 1px solid #e8e8e8;
 }
 
-.input-wrapper label.error{
+.input-wrapper label.error {
     position: absolute;
     right: 8px;
     top: 0;
@@ -114,4 +116,13 @@
 
 .sign-button:hover {
     background: #55abed;
+}
+
+.whale {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
