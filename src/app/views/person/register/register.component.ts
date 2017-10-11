@@ -6,7 +6,7 @@ import {AppService} from '../../../app.service';
 import {mobileValidator} from '../../../validator/validators';
 import {AlertService} from '../../../components/alert/alerts.service';
 import {Services} from '../../../api/index.service';
-import {whele} from '../../../util/whale';
+import {whele} from '../../../util/whale'; //鲸鱼动画
 
 @Component({
     selector: 'app-register',
@@ -50,7 +50,6 @@ export class RegisterComponent implements OnInit {
             }, error => {
                 console.log(error);
             });
-
         }
     }
 

@@ -10,13 +10,17 @@
         </div>
     </div>
     <div class="user-wrap-view">
-        <form>
+        <form [formGroup]="formModelLogin"  (submit)="onSubmit()" >
             <div class="group-inputs">
-                <div class="name input-wrapper">
-                    <input type="text" placeholder="手机或邮箱"/>
+                <div class="name input-wrapper" [class.has-error]="formModelLogin.get('phone').touched&&(formModelLogin.hasError('required','phone')||formModelLogin.hasError('minlength','phone'))">
+                    <input type="text" placeholder="手机或邮箱" formControlName="phone"  />
+                    <label [hidden]="formModelLogin.get('phone').untouched || !formModelLogin.hasError('required','phone')" class="error">必填项</label>
+                    <label [hidden]="formModelLogin.get('phone').untouched || !formModelLogin.hasError('minlength','phone')" class="error">最少输入6个字符</label>
                 </div>
-                <div class="input-wrapper">
-                    <input type="password" placeholder="密码"/>
+                <div class="input-wrapper" [class.has-error]="formModelLogin.get('password').touched&&(formModelLogin.hasError('required','password')||formModelLogin.hasError('minlength','password'))">
+                    <input type="password" placeholder="密码" formControlName="password"/>
+                  <label [hidden]="formModelLogin.get('password').untouched || !formModelLogin.hasError('required','password')" class="error">必填项</label>
+                  <label [hidden]="formModelLogin.get('password').untouched || !formModelLogin.hasError('minlength','password')" class="error">最少输入6个字符</label>
                 </div>
             </div>
             <div class="button-wrapper">
