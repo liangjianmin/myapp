@@ -19,8 +19,10 @@ export class LoginComponent implements OnInit {
 
     private fb = new FormBuilder();
 
-
-    constructor(public router: Router, private appService: AppService) {
+      // public  公开的
+      // private 私有的
+      // protected 对子女/朋友来说是public 对外部的class是private
+    constructor(public router: Router, private appService: AppService,private services:Services,private alertService:AlertService ) {
         this.appService.titleEventEmitter.emit('登录页面');
     }
 
@@ -34,6 +36,31 @@ export class LoginComponent implements OnInit {
     onSubmit(){
         var _self=this;
         if(_self.formModelLogin.valid){
+              _self.services.login(_self.formModelLogin.value).subscribe((res)=>{
+                console.log(res.status)
+                if(res.status === '200' ){
+                    _self.router.navigateByUrl('/index')
+                }else {
+                  _self.alertService.message(res.message,'error')
+                }
+              },error =>{
+                _self.alertService.message(error,'error')
+              } )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
     }

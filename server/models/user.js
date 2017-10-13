@@ -61,5 +61,17 @@ module.exports = {
      */
     saveUser: function (data, callback) {
         mysqlDB.insertTable(data, callback);
+    },
+    /**
+     * 用户登录
+     * */
+    getUserPassword:function (username, callback) {
+      sql="SELECT * FROM users WHERE username='"+username+"' ";
+      mysqlDB.getTableAllInfo({sql:sql},callback)
+
     }
+
+
+
+
 };

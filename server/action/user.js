@@ -10,7 +10,27 @@ module.exports = function (app) {
      * 登录
      */
     app.post('/login', function (req, res, next) {
+        let username=req.body.phone;
+        let password=req.body.password;
+        user.getUserPassword(username,function (data) {
+            if(data.data == ''||data.data == void 0){
+              res.send({message: '用户不存在', data: {}, status: 400})
+            }else {
+              if(data.status){
+                console.log(password.toString());
+                console.log(password.length);
+                let psw=crypto.createHash('md5').update(password.toString()).digest('hex');
+                console.log(data.data[0].password)
+                console.log(psw)
+                if(data.data[0].password == psw){
+                  res.send({message: '登录成功', data: {}, status: 200})
+                }else {
+                  res.send({message: '密码错误', data: {}, status: 400})
+                }
+              }
 
+            }
+        })
 
     });
 
@@ -27,7 +47,9 @@ module.exports = function (app) {
             userservice.isExistUser(phone).then((value) => {
                 if (!value) {
                     //加密密码
-                    password = crypto.createHash('md5').update(phone.toString()).digest('hex');
+                  console.log(password);
+                    password = crypto.createHash('md5').update(password.toString()).digest('hex');
+
                     //保存用户数据
                     user.saveUser({
                         data: {
