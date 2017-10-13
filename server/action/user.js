@@ -22,12 +22,12 @@ module.exports = function (app) {
         let password = req.body.password;
         let phone = req.body.phone;
 
-        if (username && password & phone) {
+        if (username && password && phone) {
             //判断用户手机是否注册
             userservice.isExistUser(phone).then((value) => {
                 if (!value) {
                     //加密密码
-                    password = crypto.createHash('md5').update(phone.toString()).digest('hex');
+                    password = crypto.createHash('md5').update(password.toString()).digest('hex');
                     //保存用户数据
                     user.saveUser({
                         data: {
@@ -46,7 +46,7 @@ module.exports = function (app) {
             })
 
         } else {
-            res.send({message: '字段', data: {}, status: 1});
+            res.send({message: '字段缺失', data: {}, status: 1});
         }
 
     });

@@ -25,6 +25,7 @@
                     <input type="password" placeholder="密码（不少于 6 位）" formControlName="password"/>
                     <label [hidden]="formModelRegister.get('password').untouched || !formModelRegister.hasError('required','password')" class="error">密码是必填项</label>
                     <label [hidden]="formModelRegister.get('password').untouched || !formModelRegister.hasError('minlength','password')" class="error">密码最小长度是6</label>
+                    <label [hidden]="formModelRegister.get('password').untouched || !formModelRegister.hasError('maxlength','password')" class="error">密码最大长度是8</label>
                 </div>
             </div>
             <div class="button-wrapper">
