@@ -66,7 +66,7 @@ module.exports = {
      * 用户登录
      * */
     getUserPassword:function (username, callback) {
-      sql="SELECT * FROM users WHERE username='"+username+"' ";
+      sql="SELECT * FROM users WHERE phone='"+username+"' or email='"+username+"'";
       mysqlDB.getTableAllInfo({sql:sql},callback)
 
     }

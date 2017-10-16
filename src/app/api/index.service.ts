@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class apis {
 
-    static baseUrl: string = 'http://127.0.0.1:3000/';
+    static baseUrl: string = 'http://localhost:3000/';
 
     /**
      *  获取首页新闻
@@ -25,7 +25,10 @@ export class apis {
      */
     static login = apis.baseUrl + 'login';
 
-
+    /**
+     * session
+     * */
+    static session=apis.baseUrl+'session'
 }
 
 
@@ -48,5 +51,8 @@ export class Services {
         return this.http.post(apis.login, params).map(res => res.json());
     }
 
+    getSession(params):Observable<any>{
+      return this.http.get(apis.session, params).map(res => res.json());
+    }
 
 }

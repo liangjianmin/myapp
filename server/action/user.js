@@ -17,13 +17,11 @@ module.exports = function (app) {
               res.send({message: '用户不存在', data: {}, status: 400})
             }else {
               if(data.status){
-                console.log(password.toString());
-                console.log(password.length);
                 let psw=crypto.createHash('md5').update(password.toString()).digest('hex');
-                console.log(data.data[0].password)
-                console.log(psw)
                 if(data.data[0].password == psw){
-                  res.send({message: '登录成功', data: {}, status: 200})
+                  //session
+                  req.session.user=data.data[0];
+                  res.send({message: '登录成功', data: {}, status: 200});
                 }else {
                   res.send({message: '密码错误', data: {}, status: 400})
                 }
@@ -33,6 +31,14 @@ module.exports = function (app) {
         })
 
     });
+
+    /**
+     * 获取session
+     * */
+    app.get('/session',function (req, res) {
+      console.log(req.session);
+       res.send(req.session);
+    })
 
     /**
      * 注册

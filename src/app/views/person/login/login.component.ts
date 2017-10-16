@@ -38,7 +38,8 @@ export class LoginComponent implements OnInit {
         if(_self.formModelLogin.valid){
               _self.services.login(_self.formModelLogin.value).subscribe((res)=>{
                 console.log(res.status)
-                if(res.status === '200' ){
+                if(res.status == '200' ){
+                  _self.alertService.message(res.message,'success')
                     _self.router.navigateByUrl('/index')
                 }else {
                   _self.alertService.message(res.message,'error')

@@ -30,12 +30,12 @@ app.use(favicon("./favicon.ico"))
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use(cookieParser());
+app.use(cookieParser());  //设置session   || session是将客户端信息以某种形式记录在服务器上
 app.use(session({
     secret: 'appuser',
-    name: 'user',
+    name: 'user',  //在response 中sessionID这个cookie的名称。
     cookie: {maxAge: 3600000 * 24 * 30},
-    resave: false,
+    resave: false, //强制session保存到session st
     saveUninitialized: true
 }));
 

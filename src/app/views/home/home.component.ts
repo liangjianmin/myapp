@@ -4,7 +4,7 @@ import 'rxjs/Rx';
 import {Observable} from 'rxjs';
 import {AppService} from '../../app.service';
 import {Services} from '../../api/index.service';
-
+import {Http} from '@angular/http';
 
 @Component({
     selector: 'app-home',
@@ -16,18 +16,18 @@ export class HomeComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
     public title: string = '首页';
 
     // 首页新闻
-    private contentNews: Observable<any>;
 
-
+  private contentNews: Observable<any>;
     constructor(public router: Router, private appService: AppService, private services: Services, private elementRef: ElementRef) {
 
         this.appService.titleEventEmitter.emit('首页');
+
         this.contentNews = this.services.getHomeNews({page:1});
+
     }
 
 
     ngOnInit() {
-
     }
 
     ngAfterViewInit() {
@@ -35,7 +35,6 @@ export class HomeComponent implements OnInit, AfterViewInit, DoCheck, AfterViewC
         setTimeout(() => {
             var dom = this.elementRef.nativeElement.querySelectorAll('.newslist li img');
             //var width=dom[0].style.width='400px'
-            console.log(dom[0].offsetWidth);
         }, 0);
 
     }
